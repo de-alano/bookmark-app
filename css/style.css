@@ -61,7 +61,7 @@ body {
     .bookmark-form__input:focus {
       outline: none;
       border-bottom: 3px solid #ea8685;
-      box-shadow: 0 0.4rem 0.8rem rgba(241, 242, 246, 0.1); }
+      box-shadow: 0 0.4rem 0.8rem rgba(255, 255, 255, 0.1); }
   .bookmark-form__btn {
     display: block;
     margin: 2rem 0;
@@ -73,10 +73,49 @@ body {
     letter-spacing: 2px;
     text-transform: uppercase;
     border-radius: 2rem;
-    color: #f1f2f6;
+    color: #ffffff;
     background-image: linear-gradient(to right bottom, #ea8685, #e66767);
     outline: none; }
     .bookmark-form__btn:hover {
       cursor: pointer;
       background-image: linear-gradient(to right bottom, #e66767, #ea8685);
-      box-shadow: 0 0.4rem 0.8rem rgba(241, 242, 246, 0.1); }
+      box-shadow: 0 0.4rem 0.8rem rgba(255, 255, 255, 0.1); }
+
+.bookmarks {
+  justify-items: center;
+  align-items: center; }
+
+.bookmark {
+  height: 10rem;
+  width: 10rem;
+  background-color: rgba(61, 61, 61, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  .bookmark__link, .bookmark__link:link, .bookmark__link:visited {
+    display: block;
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+    width: 100%;
+    height: 8rem;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    line-height: 8rem;
+    font-size: 1.5rem;
+    color: #f1f2f6; }
+  .bookmark__link--added {
+    background-color: #e66767; }
+  .bookmark__delete {
+    display: block;
+    border: none;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #3d3d3d;
+    outline: none;
+    transition: all .2s; }
+    .bookmark__delete:hover {
+      background-color: #ffffff;
+      color: #e66767; }
