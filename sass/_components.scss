@@ -1,0 +1,72 @@
+.header {
+
+}
+
+.bookmark-form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+
+    &__group {
+        width: 100%;
+        height: 30%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__label {
+        font-size: 1.3rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+        color: $color-primary-dark;
+        margin-bottom: 0.5rem;
+    }
+
+    &__input {
+        display: block;
+        width: 80%;
+        font-size: 1.5rem;
+        font-family: $font;
+        border: none;
+        padding: 1rem 2rem;
+        border-bottom: 3px solid transparent;
+        transition: all .3s;
+        color: $color-dark-2;
+
+        &:focus {
+            outline: none;
+            border-bottom: 3px solid $color-primary-light;
+            box-shadow: 0 .4rem .8rem rgba($color-light-1, .1);
+        }
+    }
+
+    &__btn {
+        display: block;
+        margin: 2rem 0;
+        padding: 1rem 2rem;
+        border: none;
+        font-family: $font;
+        font-size: 1.5rem;
+        font-weight: 400;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border-radius: 2rem;
+        color: $color-light-1;
+        background-image: linear-gradient(to right bottom,
+        $color-primary-light, $color-primary-dark);
+        outline: none;
+
+        &:hover {
+            cursor: pointer;
+            background-image: linear-gradient(to right bottom,
+            $color-primary-dark, $color-primary-light);
+            box-shadow: 0 .4rem .8rem rgba($color-light-1, .1);
+        }
+
+    }
+}
