@@ -74,28 +74,33 @@
     height: 8rem;
     width: 8rem;
 
-    box-sizing: border-box;
-    background-color: $color-dark-2;
-
-    cursor: pointer;
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-
     position: relative;
 
 
     &__name {
-        color: $color-light-1;
-        font-size: 1.5rem;
-        text-align: center;
-        padding: 1rem;
-        font-weight: 400;
+        background-color: $color-dark-2;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
 
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
+        color: $color-light-1;
+        font-size: 1.3rem;
+        text-align: center;
+        font-weight: 400;
+        cursor: pointer;
+        text-decoration: none;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        transition: all .3s;
+
+        &:hover {
+            color: $color-primary-dark;
+            background-color: rgba($color-dark-2, .7);
+        }
     }
 
     &__delete {
@@ -115,5 +120,11 @@
         font-weight: 700;
         text-align: center;
         font-size: 1.2rem;
+        cursor: pointer;
+        transition: all .3s;
+
+        &:hover {
+            background-color: $color-primary-light;
+        }
     }
 }
