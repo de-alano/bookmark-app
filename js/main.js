@@ -32,7 +32,10 @@ const addBookmark = e => {
     // Clear input fields
     document.getElementById('bookmark-form').reset();
 
+    // Fetch bookmarks
+    fetchBookmarks();
 
+    // Prevent from submitting a form
     e.preventDefault();
 }
 
@@ -50,6 +53,33 @@ const removeBookmark = url => {
 
     // Add bookmarks back to local storage
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+
+    // Fetch bookmarks
+    fetchBookmarks();
+}
+
+// Fetch bookmarks function
+const fetchBookmarks = () => {
+    // Get bookmarks from local storage
+    const bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+    console.log(bookmarks);
+
+    // Get output section
+    const result = document.getElementById('bookmarks');
+
+    // Build output
+    result.innerHTML = ``;
+    for (let i = 0; i < bookmarks.length; i++) {
+        const name = bookmarks[i].name;
+        const url = bookmarks[i].url;
+
+        // Add output to DOM
+        result.innerHTML += `
+        <div class="bookmark">
+            <a href="${url}" class="bookmark__name">${name}</a>
+            <a href="#" class="bookmark__delete" onClick="removeBookmark('${url}')">X</a>
+        </div>`;
+    }
 }
 
 document.getElementById('bookmark-form').addEventListener('submit', addBookmark);
