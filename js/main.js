@@ -76,7 +76,7 @@ const fetchBookmarks = () => {
         // Add output to DOM
         result.innerHTML += `
         <div class="bookmark">
-            <a href="${url}" class="bookmark__name">${name}</a>
+            <a href="${url}" target="_blank" class="bookmark__name">${name}</a>
             <a href="#" class="bookmark__delete" onClick="removeBookmark('${url}')">X</a>
         </div>`;
     }
