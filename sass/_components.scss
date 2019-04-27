@@ -78,44 +78,5 @@
     width: 10rem;
     background-color: rgba($color-dark-2, .7);
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    &__link,
-    &__link:link,
-    &__link:visited {
-        display: block;
-        margin-bottom: 1rem;
-        border-radius: .5rem;
-        width: 100%;
-        height: 8rem;
-        cursor: pointer;
-        text-decoration: none;
-        text-align: center;
-        line-height: 8rem;
-        font-size: 1.5rem;
-        color: $color-light-2;
-    }
-
-    &__link--added {
-        background-color: $color-primary-dark;
-    }
-
-    &__delete {
-        display: block;
-        // height: 2rem;
-        border: none;
-        font-family: $font;
-        font-weight: 700;
-        text-transform: uppercase;
-        cursor: pointer;
-        color: $color-dark-2;
-        outline: none;
-        transition: all .2s;
-
-        &:hover {
-            background-color: $color-light-1;
-            color: $color-primary-dark;
-        }
-    }
+    
 }
