@@ -35,6 +35,9 @@ const addBookmark = e => {
     // Fetch bookmarks
     fetchBookmarks();
 
+    // Set focus on the url field
+    document.getElementById('url').focus();
+
     // Prevent from submitting a form
     e.preventDefault();
 }
