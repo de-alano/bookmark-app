@@ -7,18 +7,31 @@
 
 .header {
     width: 100%;
-
     background-color: $color-dark-2;
 }
 
 .bookmarks {
+    max-width: 100rem;
+    margin: 0 auto;
     display: grid;
-    // grid-template-rows: repeat(4, 1fr);
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
     justify-items: center;
     align-items: center;
     padding: 3rem 2rem;
-
+    box-sizing: border-box;
     background-color: $color-dark-1;
+
+    @media only screen and (min-width: $bp-500) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media only screen and (min-width: $bp-700) {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+
+    @media only screen and (min-width: $bp-900) {
+        grid-template-columns: repeat(6, 1fr);
+    }
 }
