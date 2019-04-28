@@ -71,30 +71,59 @@
 
 
 .bookmark {
-    height: 8rem;
-    width: 8rem;
+    height: 10rem;
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 
-    position: relative;
+    &__content {
+        height: 6rem;
+        width: 6rem;
+        position: relative;
+    }
 
+    &__icon {
+        width: 2rem;
+        height: 2rem;
+    }
 
-    &__name {
+    &__link {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: $color-dark-2;
         border-top-left-radius: 1rem;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
-
-        color: $color-light-1;
-        font-size: 1.3rem;
-        text-align: center;
-        font-weight: 400;
+        border-radius: 50%;
         cursor: pointer;
         text-decoration: none;
         box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        transition: all .3s;
+
+        &:hover {
+            background-color: rgba($color-dark-2, .7);
+        }
+    }
+
+
+    &__name {
+        display: block;
+        padding: 0.3rem;
         width: 100%;
-        height: 100%;
+        box-sizing: border-box;
+        font-size: 1.1rem;
+        text-align: center;
+        font-weight: 400;
+        color: $color-light-1;
+        background-color: $color-dark-2;
+        border-radius: 1.5rem;
+        text-decoration: none;
+        cursor: pointer;
         transition: all .3s;
 
         &:hover {

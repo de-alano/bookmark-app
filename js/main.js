@@ -91,8 +91,8 @@ const fetchBookmarks = () => {
             <div class="bookmark__content">
             <a href="${url}" target="_blank" class="bookmark__link"><img src="${icon}" class="bookmark__icon"></a>
             <a href="#" class="bookmark__delete" onClick="removeBookmark('${url}')">X</a>
-            <a href="${url}" target="_blank" class="bookmark__name">${name}</a>
             </div>
+            <a href="${url}" target="_blank" class="bookmark__name">${name}</a>
         </div>`;
     }
 }
