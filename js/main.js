@@ -1,3 +1,10 @@
+// Get favicon from added website
+const getFavicon = (url) => {
+    let favicon = `https://s2.googleusercontent.com/s2/favicons?domain=${url}`;
+
+    return favicon;
+}
+
 
 // Add bookmark function
 const addBookmark = e => {
@@ -8,7 +15,9 @@ const addBookmark = e => {
     // Create bookmark object
     const bookmark = {
         url: siteURL,
-        name: siteName
+        name: siteName,
+        // Get favicon
+        icon: getFavicon(siteURL)
     };
 
     // Local Storage
@@ -65,7 +74,6 @@ const removeBookmark = url => {
 const fetchBookmarks = () => {
     // Get bookmarks from local storage
     const bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
-    console.log(bookmarks);
 
     // Get output section
     const result = document.getElementById('bookmarks');
@@ -75,12 +83,16 @@ const fetchBookmarks = () => {
     for (let i = 0; i < bookmarks.length; i++) {
         const name = bookmarks[i].name;
         const url = bookmarks[i].url;
+        const icon = bookmarks[i].icon;
 
         // Add output to DOM
         result.innerHTML += `
         <div class="bookmark">
-            <a href="${url}" target="_blank" class="bookmark__name">${name}</a>
+            <div class="bookmark__content">
+            <a href="${url}" target="_blank" class="bookmark__link"><img src="${icon}" class="bookmark__icon"></a>
             <a href="#" class="bookmark__delete" onClick="removeBookmark('${url}')">X</a>
+            <a href="${url}" target="_blank" class="bookmark__name">${name}</a>
+            </div>
         </div>`;
     }
 }
