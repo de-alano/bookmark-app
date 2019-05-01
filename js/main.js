@@ -98,3 +98,13 @@ const fetchBookmarks = () => {
 }
 
 document.getElementById('bookmark-form').addEventListener('submit', addBookmark);
+
+
+// Animation
+const toggler = document.querySelector('.form-toggler');
+const form = document.querySelector('.bookmark-form');
+
+toggler.addEventListener('click', () => {
+    toggler.classList.toggle('active');
+    form.classList.toggle('active');
+});

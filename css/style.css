@@ -21,7 +21,8 @@ body {
 
 .header {
   width: 100%;
-  background-color: #3d3d3d; }
+  background-color: #3d3d3d;
+  position: relative; }
 
 .bookmarks {
   max-width: 100rem;
@@ -31,7 +32,7 @@ body {
   grid-gap: 2rem;
   justify-items: center;
   align-items: center;
-  padding: 3rem 2rem;
+  padding: 8rem 2rem;
   box-sizing: border-box;
   background-color: #4b4b4b; }
   @media only screen and (min-width: 31.25em) {
@@ -44,14 +45,39 @@ body {
     .bookmarks {
       grid-template-columns: repeat(6, 1fr); } }
 
+.form-toggler {
+  position: absolute;
+  left: 50%;
+  bottom: -4rem;
+  transform: translateX(-50%);
+  transition: all .5s ease; }
+  .form-toggler__icon {
+    font-size: 3.5rem;
+    color: #e66767;
+    cursor: pointer;
+    z-index: 10; }
+  .form-toggler.active {
+    transform: translateX(-50%) rotate(540deg); }
+
+@keyframes formFadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
 .bookmark-form {
   height: 100%;
-  display: flex;
+  display: none;
+  opacity: 0;
   flex-direction: column;
   align-items: center;
   padding: 1rem 0;
   max-width: 120rem;
   margin: 0 auto; }
+  .bookmark-form.active {
+    display: flex;
+    opacity: 1;
+    animation: formFadeIn 1s; }
   @media only screen and (min-width: 56.25em) {
     .bookmark-form {
       flex-direction: row;

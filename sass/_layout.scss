@@ -8,6 +8,7 @@
 .header {
     width: 100%;
     background-color: $color-dark-2;
+    position: relative;
 }
 
 .bookmarks {
@@ -18,7 +19,7 @@
     grid-gap: 2rem;
     justify-items: center;
     align-items: center;
-    padding: 3rem 2rem;
+    padding: 8rem 2rem;
     box-sizing: border-box;
     background-color: $color-dark-1;
 
