@@ -16,10 +16,6 @@
         transform: translateX(-50%) rotate(540deg);
     }
 
-    // &.active + .bookmark-form {
-    //     display: flex;
-    //     animation: fadeIn 1s;
-    // }
 }
 
 @keyframes formFadeIn {
@@ -30,7 +26,6 @@
 .bookmark-form {
     height: 100%;
     display: none;
-    // opacity: 0;
     flex-direction: column;
     align-items: center;
     padding: 1rem 0;
@@ -148,6 +143,7 @@
     justify-content: space-around;
     align-items: center;
 
+
     &__content {
         height: 6rem;
         width: 6rem;
@@ -176,9 +172,10 @@
         transition: all .3s;
 
         &:hover {
-            background-color: rgba($color-dark-2, .7);
+            background-color: rgba($color-dark-2, .6);
         }
     }
+
 
 
     &__name {
@@ -198,7 +195,7 @@
 
         &:hover {
             color: $color-primary-dark;
-            background-color: rgba($color-dark-2, .7);
+            background-color: rgba($color-dark-2, .6);
         }
     }
 
@@ -209,16 +206,16 @@
         transform: translate(-50%,-50%);
         color: $color-light-1;
         background-color: $color-dark-2;
-        border: 2px solid $color-primary-dark;
+        border: 2px solid $color-primary-light;
         text-decoration: none;
         width: 1.5rem;
         height: 1.5rem;
         line-height: 1.5rem;
         border-radius: 50%;
         padding: 0.2rem;
-        font-weight: 700;
+        font-weight: 400;
         text-align: center;
-        font-size: 1.2rem;
+        font-size: 1rem;
         cursor: pointer;
         transition: all .3s;
 
