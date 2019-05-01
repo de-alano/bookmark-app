@@ -84,6 +84,8 @@ const fetchBookmarks = () => {
         const name = bookmarks[i].name;
         const url = bookmarks[i].url;
         const icon = bookmarks[i].icon;
+        // Slice name if it is long or equal 14 chars
+        let sliceName = name.slice(0, -3) + '...';
 
         // Add output to DOM
         result.innerHTML += `
@@ -92,7 +94,7 @@ const fetchBookmarks = () => {
             <a href="${url}" target="_blank" class="bookmark__link"><img src="${icon}" class="bookmark__icon"></a>
             <a href="#" class="bookmark__delete" onClick="removeBookmark('${url}')">X</a>
             </div>
-            <a href="${url}" target="_blank" class="bookmark__name">${name}</a>
+            <a href="${url}" target="_blank" class="bookmark__name">${name.length >= 14 ? sliceName : name}</a>
         </div>`;
     }
 }
@@ -100,7 +102,7 @@ const fetchBookmarks = () => {
 document.getElementById('bookmark-form').addEventListener('submit', addBookmark);
 
 
-// Animation
+// Add fadeIn animation to form and rotate to toggler
 const toggler = document.querySelector('.form-toggler');
 const form = document.querySelector('.bookmark-form');
 
