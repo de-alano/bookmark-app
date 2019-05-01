@@ -23,6 +23,10 @@
     box-sizing: border-box;
     background-color: $color-dark-1;
 
+    @media only screen and (max-width: $bp-400) {
+        padding: 8rem 1rem;
+    }
+
     @media only screen and (min-width: $bp-500) {
         grid-template-columns: repeat(4, 1fr);
     }

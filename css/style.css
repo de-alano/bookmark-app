@@ -35,6 +35,9 @@ body {
   padding: 8rem 2rem;
   box-sizing: border-box;
   background-color: #4b4b4b; }
+  @media only screen and (max-width: 25em) {
+    .bookmarks {
+      padding: 8rem 1rem; } }
   @media only screen and (min-width: 31.25em) {
     .bookmarks {
       grid-template-columns: repeat(4, 1fr); } }
@@ -68,7 +71,6 @@ body {
 .bookmark-form {
   height: 100%;
   display: none;
-  opacity: 0;
   flex-direction: column;
   align-items: center;
   padding: 1rem 0;

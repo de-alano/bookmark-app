@@ -27,12 +27,10 @@
     to { opacity: 1; }
 }
 
-
-
 .bookmark-form {
     height: 100%;
     display: none;
-    opacity: 0;
+    // opacity: 0;
     flex-direction: column;
     align-items: center;
     padding: 1rem 0;
