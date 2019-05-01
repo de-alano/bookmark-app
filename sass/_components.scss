@@ -148,6 +148,12 @@
         height: 6rem;
         width: 6rem;
         position: relative;
+        border-radius: 50%;
+    }
+
+    &__content:hover + &__name {
+        color: $color-primary-dark;
+        background-color: rgba($color-dark-2, .6);
     }
 
     &__icon {
@@ -192,11 +198,6 @@
         text-decoration: none;
         cursor: pointer;
         transition: all .3s;
-
-        &:hover {
-            color: $color-primary-dark;
-            background-color: rgba($color-dark-2, .6);
-        }
     }
 
     &__delete {

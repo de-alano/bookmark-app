@@ -160,7 +160,11 @@ body {
   .bookmark__content {
     height: 6rem;
     width: 6rem;
-    position: relative; }
+    position: relative;
+    border-radius: 50%; }
+  .bookmark__content:hover + .bookmark__name {
+    color: #e66767;
+    background-color: rgba(61, 61, 61, 0.6); }
   .bookmark__icon {
     width: 2rem;
     height: 2rem; }
@@ -195,9 +199,6 @@ body {
     text-decoration: none;
     cursor: pointer;
     transition: all .3s; }
-    .bookmark__name:hover {
-      color: #e66767;
-      background-color: rgba(61, 61, 61, 0.6); }
   .bookmark__delete {
     position: absolute;
     top: 0;
