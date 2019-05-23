@@ -49,6 +49,27 @@ const addBookmark = e => {
 
     // Prevent from submitting a form
     e.preventDefault();
+
+    // Add animation to added bookmark
+    const allBookmarks = document.querySelectorAll('.bookmark');
+    // Get new bookmark
+    const newBookmark = allBookmarks[allBookmarks.length - 1];
+    // Add added class to new bookmark
+    newBookmark.classList.add('added');
+
+    // Add animation to added icon
+    const allIcons = document.querySelectorAll('.bookmark__icon');
+    // Get new icon
+    const newIcon = allIcons[allIcons.length - 1];
+    // Add rotate class to new added icon
+    newIcon.classList.add('rotate');
+
+    // Add animation to delete button
+    const allDeleteButtons = document.querySelectorAll('.bookmark__delete');
+    // Get new delete button
+    const newDeleteButton = allDeleteButtons[allDeleteButtons.length - 1];
+    // Add animated class to new delete button
+    newDeleteButton.classList.add('animated');
 }
 
 // Remove bookmark function
@@ -96,6 +117,7 @@ const fetchBookmarks = () => {
             </div>
             <a href="${url}" target="_blank" class="bookmark__name">${name.length >= 14 ? sliceName : name}</a>
         </div>`;
+
     }
 }
 

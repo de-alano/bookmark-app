@@ -1,3 +1,29 @@
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem); }
+  80% {
+    transform: translateY(1rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translate(1rem, -50%); }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%); } }
+
+@keyframes rotate {
+  0% {
+    opacity: 0;
+    transform: rotate(0); }
+  100% {
+    opacity: 1;
+    transform: rotate(360deg); } }
+
 *,
 *::before,
 *::after {
@@ -220,3 +246,12 @@ body {
     transition: all .3s; }
     .bookmark__delete:hover {
       background-color: #ea8685; }
+
+.bookmark.added {
+  animation: moveInTop .6s ease-out; }
+
+.bookmark__delete.animated {
+  animation: moveInRight .5s .6s ease-out both; }
+
+.bookmark__icon.rotate {
+  animation: rotate .5s .6s ease-out both; }

@@ -1,5 +1,4 @@
 // COLOR VARIABLES
-
 $color-primary-light: #ea8685;
 $color-primary-dark: #e66767;
 
@@ -9,7 +8,49 @@ $color-dark-2: #3d3d3d;
 $color-light-1: #ffffff;
 $color-light-2: #f1f2f6;
 
+// FONTS
 $font: 'Open Sans', sans-serif;
+
+// KEYFRAMES
+@keyframes moveInTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-2rem);
+    }
+
+    80% {
+        transform: translateY(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translate(1rem,-50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%,-50%);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        opacity: 0;
+        transform: rotate(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+}
 
 // MEDIA QUERY BREAKPOINTS
 $bp-400: 25em; // 400px

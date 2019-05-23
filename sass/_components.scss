@@ -225,3 +225,15 @@
         }
     }
 }
+
+.bookmark.added {
+    animation: moveInTop .6s ease-out;
+}
+
+.bookmark__delete.animated {
+    animation: moveInRight .5s .6s ease-out both;
+}
+
+.bookmark__icon.rotate {
+    animation: rotate .5s .6s ease-out both;
+}
