@@ -4,17 +4,23 @@
     bottom: -4rem;
     transform: translateX(-50%);
     transition: all .5s ease;
-    
+
     &__icon {
         font-size: 3.5rem;
         color: $color-primary-dark;
         cursor: pointer;
-        z-index: 10;  
+        z-index: 10;
+
+        &:focus, &:active {outline: none;}
     }
 
     &.active {
         transform: translateX(-50%) rotate(540deg);
     }
+
+
+
+    &, & * {-webkit-tap-highlight-color: rgba(0,0,0,0);}
 
 }
 

@@ -85,8 +85,12 @@ body {
     color: #e66767;
     cursor: pointer;
     z-index: 10; }
+    .form-toggler__icon:focus, .form-toggler__icon:active {
+      outline: none; }
   .form-toggler.active {
     transform: translateX(-50%) rotate(540deg); }
+  .form-toggler, .form-toggler * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 @keyframes formFadeIn {
   from {
