@@ -51,25 +51,7 @@ const addBookmark = e => {
     e.preventDefault();
 
     // Add animation to added bookmark
-    const allBookmarks = document.querySelectorAll('.bookmark');
-    // Get new bookmark
-    const newBookmark = allBookmarks[allBookmarks.length - 1];
-    // Add added class to new bookmark
-    newBookmark.classList.add('added');
-
-    // Add animation to added icon
-    const allIcons = document.querySelectorAll('.bookmark__icon');
-    // Get new icon
-    const newIcon = allIcons[allIcons.length - 1];
-    // Add rotate class to new added icon
-    newIcon.classList.add('rotate');
-
-    // Add animation to delete button
-    const allDeleteButtons = document.querySelectorAll('.bookmark__delete');
-    // Get new delete button
-    const newDeleteButton = allDeleteButtons[allDeleteButtons.length - 1];
-    // Add animated class to new delete button
-    newDeleteButton.classList.add('animated');
+    animateBookmark();
 }
 
 // Remove bookmark function
@@ -123,12 +105,34 @@ const fetchBookmarks = () => {
 
 document.getElementById('bookmark-form').addEventListener('submit', addBookmark);
 
-
 // Add fadeIn animation to form and rotate to toggler
-const toggler = document.querySelector('.form-toggler');
-const form = document.querySelector('.bookmark-form');
-
-toggler.addEventListener('click', () => {
+function animateForm() {
+    const form = document.querySelector('.bookmark-form');
+    const toggler = document.querySelector('.form-toggler');
     toggler.classList.toggle('active');
     form.classList.toggle('active');
-});
+}
+
+document.querySelector('.form-toggler').addEventListener('click', animateForm);
+
+function animateBookmark() {
+    const allBookmarks = document.querySelectorAll('.bookmark');
+    // Get new bookmark
+    const newBookmark = allBookmarks[allBookmarks.length - 1];
+    // Add added class to new bookmark
+    newBookmark.classList.add('added');
+
+    // Add animation to added icon
+    const allIcons = document.querySelectorAll('.bookmark__icon');
+    // Get new icon
+    const newIcon = allIcons[allIcons.length - 1];
+    // Add rotate class to new added icon
+    newIcon.classList.add('rotate');
+
+    // Add animation to delete button
+    const allDeleteButtons = document.querySelectorAll('.bookmark__delete');
+    // Get new delete button
+    const newDeleteButton = allDeleteButtons[allDeleteButtons.length - 1];
+    // Add animated class to new delete button
+    newDeleteButton.classList.add('animated');
+}

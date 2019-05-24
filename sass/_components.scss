@@ -227,13 +227,13 @@
 }
 
 .bookmark.added {
-    animation: moveInTop .6s ease-out;
+    animation: moveInTop .5s ease-out;
 }
 
 .bookmark__delete.animated {
-    animation: moveInRight .5s .6s ease-out both;
+    animation: moveInRight .5s 1s ease-out both;
 }
 
 .bookmark__icon.rotate {
-    animation: rotate .5s .6s ease-out both;
+    animation: rotate .5s .5s ease-out both;
 }
