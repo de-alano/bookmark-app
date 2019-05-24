@@ -12,6 +12,9 @@ const addBookmark = e => {
     const siteURL = document.getElementById('url').value;
     const siteName = document.getElementById('name').value;
 
+    // Form validation
+    if (!validateForm(siteURL, siteName)) return false;
+
     // Create bookmark object
     const bookmark = {
         url: siteURL,
@@ -94,7 +97,7 @@ const fetchBookmarks = () => {
         result.innerHTML += `
         <div class="bookmark">
             <div class="bookmark__content">
-            <a href="${url}" target="_blank" class="bookmark__link"><img src="${icon}" class="bookmark__icon"></a>
+            <a href="${addhttp(url)}" target="_blank" class="bookmark__link"><img src="${icon}" class="bookmark__icon"></a>
             <a href="#" class="bookmark__delete" onClick="removeBookmark('${url}')">X</a>
             </div>
             <a href="${url}" target="_blank" class="bookmark__name">${name.length >= 14 ? sliceName : name}</a>
@@ -135,4 +138,31 @@ function animateBookmark() {
     const newDeleteButton = allDeleteButtons[allDeleteButtons.length - 1];
     // Add animated class to new delete button
     newDeleteButton.classList.add('animated');
+}
+
+// Form validation
+function validateForm(url, name) {
+    // Check if the fields are filled
+    if (!url || !name) {
+        alert('Please fill the fields in the form!');
+        return false;
+    }
+
+    // Check if a URL is correct
+    const expr = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+    const regex = new RegExp(expr);
+    if (!url.match(regex)) {
+        alert('Please use a valid URL!');
+        return false;
+    }
+
+    return true;
+}
+
+// Add http to a URL 
+function addhttp(url) {
+    if (!/^(?:f|ht)tps?\:\/\//.test(url)) {
+        url = "http://" + url;
+    }
+    return url;
 }
